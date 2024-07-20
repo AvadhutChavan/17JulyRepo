@@ -3,26 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <title>Hacker Themed Form</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #111;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgb(16, 206, 16);
+            width: 100%;
+            max-width: 500px;
+            border:5px solid rgb(11, 221, 11);
+        }
+      
+
+        form h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #0f0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #0f0;
+            border-radius: 5px;
+            background-color: #000;
+            color: #0f0;
+            font-size: 1em;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #0f0;
+            color: #000;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0a0;
+        }
+    </style>
 </head>
 <body>
-    <h1>17 July Repo</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-    <form action="">
-        <label for="name">Name: </label>
-        <input type="text" name="" id="name">
-    </form>
-</body>
-<script>
-    let row=5,i,j;
-    for (let i = 0; i < row; i++) {
-    let stars = "";
-    for (let j = 0; j <= i; j++) {
-        stars += " * ";
-    }
-    console.log(stars);
-}
+     <fieldset class="form-container">
+        <legend ><h1> Contact Form</h1></legend>
+        <form id="hackerForm">
+           
+               
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button  type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </fieldset>
 
-</script>
+    <button class="btn">click me</button>
+
+    <script>
+        document.getElementById('hackerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            location.reload();
+            alert('Form Submitted Sucessfully!');
+
+        });
+        document.querySelector(".btn").addEventListener('click',()=>{
+            location.reload();
+        })
+    </script>
+</body>
 </html>
